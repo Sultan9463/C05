@@ -18,7 +18,7 @@ int main(){
 
             printf("Tableau après rotation : ");
             for (int i = 0; i < n; i++) {
-                printf("%d", tab[i]);
+                printf("%d ", tab[i]);
             } 
             printf("\n");
             return 0;
