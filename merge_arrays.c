@@ -31,7 +31,7 @@ int main() {
         // Afficher le tableau fussionné
         printf ("Tableau fusionné : ");
        for (int i = 0; i < n1 + n2; i++) {
-            printf("%d", fusion[i]);
+            printf("%d ", fusion[i]);
         }
         printf("\n");
         return 0;
