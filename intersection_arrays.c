@@ -1,36 +1,46 @@
 #include <stdio.h>
 
+#define MAX_SIZE 100
+
 int main() {
-    int a[100], b[100], inter[100];
-    int n1, n2, i, j, k = 0;
+    int n1, n2, arr1[MAX_SIZE], arr2[MAX_SIZE], inter[MAX_SIZE];
+    int i, j, k = 0, found;
 
+    // Lire la taille et les éléments du premier tableau
     scanf("%d", &n1);
-    for (i = 0; i < n1; i++) scanf("%d", &a[i]);
+    for(i = 0; i < n1; i++)
+        scanf("%d", &arr1[i]);
 
+    // Lire la taille et les éléments du deuxième tableau
     scanf("%d", &n2);
-    for (i = 0; i < n2; i++) scanf("%d", &b[i]);
+    for(i = 0; i < n2; i++)
+        scanf("%d", &arr2[i]);
 
-    for (i = 0; i < n1; i++) {
-        for (j = 0; j < n2; j++) {
-            if (a[i] == b[j]) {
-                int exist = 0;
-                for (int m = 0; m < k; m++) {
-                    if (inter[m] == a[i]) {
-                        exist = 1;
+    // Trouver l'intersection sans doublons
+    for(i = 0; i < n1; i++) {
+        for(j = 0; j < n2; j++) {
+            if(arr1[i] == arr2[j]) {
+                // Vérifier si déjà ajouté
+                found = 0;
+                for(int l = 0; l < k; l++) {
+                    if(inter[l] == arr1[i]) {
+                        found = 1;
                         break;
                     }
                 }
-                if (!exist)
-                    inter[k++] = a[i];
+                if(!found) {
+                    inter[k++] = arr1[i];
+                }
                 break;
             }
         }
     }
 
-    printf("Intersection : ");
-    for (i = 0; i < k; i++) printf("%d ", inter[i]);
+    // Afficher le résultat
+    printf("Intersection :");
+    for(i = 0; i < k; i++)
+        printf(" %d", inter[i]);
     printf("\n");
 
     return 0;
 }
-
