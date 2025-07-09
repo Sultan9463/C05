@@ -29,7 +29,6 @@ int main() {
 
     printf("Intersection : ");
     for (i = 0; i < k; i++) printf("%d ", inter[i]);
-    printf("\n");
 
     return 0;
 }
